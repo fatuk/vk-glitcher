@@ -14,19 +14,20 @@
 		</header>
 
 		<div class="panel panel-default">
-			<div class="info-block">
-				<p class="info">Войдите на сайт</p>
-			</div>
 			<div class="panel-body">
-				<button id="loginBtn" class="btn btn-primal">Войти</button>
-				<button id="getAvatarsBtn" class="btn btn-info">Получить аватары друзей</button>
-				<button id="glitchBtn" class="btn btn-success">Glitch'em up</button>
-				<button id="logoutBtn" class="btn btn-danger">Выйти</button>
+				<div class="info-block">
+					<p class="info">Нужно залогиниться</p>
+				</div>
+
+				<button class="btn btn-success" id="loginBtn">Войти</button>
+				<button class="btn btn-info" id="getFriendsBtn">Получить аватарки друзей</button>
+				<button class="btn btn-primary" id="glitchBtn">Glitch'em</button>
+				<button class="btn btn-danger" id="logoutBtn">Выйти</button>
 			</div>
 		</div>
 
-		<div class="avatars-block">
-			
+		<div class="data-wrapper">
+			<div class="friends-block"></div>
 		</div>
 
 		<footer class="footer">
@@ -35,23 +36,8 @@
 			</p>
 		</footer>
 	</div>
-	<div id="vk_api_transport"></div>
-	<script type="text/javascript">
-	  window.vkAsyncInit = function() {
-	    VK.init({
-	      apiId: 3881634,
-	      nameTransportPath: 'xd_receiver.html'
-	    });
-	  };
-
-	  setTimeout(function() {
-	    var el = document.createElement("script");
-	    el.type = "text/javascript";
-	    el.src = "http://vkontakte.ru/js/api/openapi.js";
-	    el.async = true;
-	    document.getElementById("vk_api_transport").appendChild(el);
-	  }, 0);
-	</script>
+	
+	<script type="text/javascript" src="http://vkontakte.ru/js/api/openapi.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/vk-api.js"></script>
 	<script src="js/glitcher.js"></script>

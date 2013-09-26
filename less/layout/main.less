@@ -1,8 +1,30 @@
-.info-block {
+.header {
+	&:extend(.jumbotron);
+}
+
+
+
+.data-wrapper {
 	&:extend(.row);
 
-	.info {
+	.friends-block {
+		// &:extend(.clearfix all);
 		&:extend(.col-lg-12);
-		margin: 15px;
+
+		.friend-avatar {
+			&:extend(.img-thumbnail);
+		}
+
+		.friends-list {
+			&:extend(.menu_h all);
+			&:extend(.clearfix all);
+
+			.friend-item {
+				&:extend(.col-md-2 all);
+				padding: 5px 0px;
+				height: 210px;
+				overflow: hidden;
+			}
+		}
 	}
 }
