@@ -2,6 +2,29 @@ $(function() {
 	VK.init({
 	    apiId: 3881634
 	});
-	
-	glitch.init();
+
+	var app = {
+		init: function() {
+			glitch.init();
+
+			$('#loginBtn').click(function(event){
+			    event.preventDefault();
+			    vkApi.login();
+			});
+			$('#logoutBtn').click(function(event){
+			    event.preventDefault();
+			    vkApi.logout();
+			});
+			$('#getFriendsBtn').on('click', function(event) {
+				event.preventDefault();
+				vkApi.getFriends();
+			});
+			$('#glitchBtn').on('click', function(event) {
+				event.preventDefault();
+				glitch.make();
+			});
+		}
+	};
+
+	app.init();
 });

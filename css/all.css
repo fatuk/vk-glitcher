@@ -756,6 +756,9 @@ pre code {
 .col-lg-11,
 .col-lg-12,
 .data-wrapper .friends-block,
+.data-wrapper .friends-block .friends-list .friend-item,
+.data-wrapper .friends-block .friends-list .friend-item,
+.data-wrapper .friends-block .friends-list .friend-item,
 .data-wrapper .friends-block .friends-list .friend-item {
   position: relative;
   min-height: 1px;
@@ -772,7 +775,8 @@ pre code {
 .col-xs-8,
 .col-xs-9,
 .col-xs-10,
-.col-xs-11 {
+.col-xs-11,
+.data-wrapper .friends-block .friends-list .friend-item {
   float: left;
 }
 .col-xs-1 {
@@ -790,7 +794,8 @@ pre code {
 .col-xs-5 {
   width: 41.66666666666667%;
 }
-.col-xs-6 {
+.col-xs-6,
+.data-wrapper .friends-block .friends-list .friend-item {
   width: 50%;
 }
 .col-xs-7 {
@@ -825,7 +830,8 @@ pre code {
   .col-sm-8,
   .col-sm-9,
   .col-sm-10,
-  .col-sm-11 {
+  .col-sm-11,
+  .data-wrapper .friends-block .friends-list .friend-item {
     float: left;
   }
   .col-sm-1 {
@@ -837,7 +843,8 @@ pre code {
   .col-sm-3 {
     width: 25%;
   }
-  .col-sm-4 {
+  .col-sm-4,
+  .data-wrapper .friends-block .friends-list .friend-item {
     width: 33.33333333333333%;
   }
   .col-sm-5 {
@@ -985,11 +992,11 @@ pre code {
   .col-md-1 {
     width: 8.333333333333332%;
   }
-  .col-md-2,
-  .data-wrapper .friends-block .friends-list .friend-item {
+  .col-md-2 {
     width: 16.666666666666664%;
   }
-  .col-md-3 {
+  .col-md-3,
+  .data-wrapper .friends-block .friends-list .friend-item {
     width: 25%;
   }
   .col-md-4 {
@@ -1142,13 +1149,15 @@ pre code {
   .col-lg-8,
   .col-lg-9,
   .col-lg-10,
-  .col-lg-11 {
+  .col-lg-11,
+  .data-wrapper .friends-block .friends-list .friend-item {
     float: left;
   }
   .col-lg-1 {
     width: 8.333333333333332%;
   }
-  .col-lg-2 {
+  .col-lg-2,
+  .data-wrapper .friends-block .friends-list .friend-item {
     width: 16.666666666666664%;
   }
   .col-lg-3 {
@@ -6090,6 +6099,12 @@ td.visible-print {
   top: 0;
   left: -30px;
   border-right: solid 1px #fff;
+}
+.data-wrapper {
+  min-height: 300px;
+}
+.data-wrapper .friends-block .friend-avatar {
+  width: 100%;
 }
 .data-wrapper .friends-block .friends-list .friend-item {
   padding: 5px 0px;

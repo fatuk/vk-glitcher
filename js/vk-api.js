@@ -2,17 +2,20 @@
 	var vkApi = {
 		init: function(){
 			this.getData();
-			/*if (this.status == 'connected') {
-				$('#loginBtn').attr('disabled', true);
-				$('#getFriendsBtn').attr('disabled', false);
-				$('#glitchBtn').attr('disabled', false);
-				$('#logoutBtn').attr('disabled', false);
-			}else {
-				$('#loginBtn').attr('disabled', false);
-				$('#getFriendsBtn').attr('disabled', true);
-				$('#glitchBtn').attr('disabled', true);
-				$('#logoutBtn').attr('disabled', true);
-			}*/
+			
+			VK.Auth.getLoginStatus(function(response){
+				if(response.session){
+					$('#loginBtn').attr('disabled', true);
+					$('#getFriendsBtn').attr('disabled', false);
+					$('#glitchBtn').attr('disabled', true);
+					$('#logoutBtn').attr('disabled', false);
+				}else {
+					$('#loginBtn').attr('disabled', false);
+					$('#getFriendsBtn').attr('disabled', true);
+					$('#glitchBtn').attr('disabled', true);
+					$('#logoutBtn').attr('disabled', true);
+				}
+			});
 		},
 		getData: function(){
 			VK.Auth.getLoginStatus(function(response){
@@ -46,8 +49,11 @@
 		},
 		login: function(){
 			VK.Auth.login(null, VK.access.FRIENDS);
-			$('#getFriendsBtn').attr('disabled', false);
-			$('#logoutBtn').attr('disabled', false);
+
+			VK.Observer.subscribe('auth.login', function(response){
+				$('#getFriendsBtn').attr('disabled', false);
+				$('#logoutBtn').attr('disabled', false);
+			});
 		},
 		logout: function(){
 			VK.Auth.logout(function() {
